@@ -1,0 +1,25 @@
+{
+  "name": "algebra-game",
+  "version": "1.0.0",
+  "main": "dist/game.js",
+  "author": "Nidhi Reddy <nreddy216@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "webpack --progress --colors --watch --config ./webpack.config.js",
+    "build": "webpack --config ./webpack.config.js",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
+    "gh-pages": "^1.0.0",
+    "path": "^0.12.7",
+    "webpack": "^2.5.1"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}

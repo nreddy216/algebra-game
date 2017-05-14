@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack --progress --colors --watch --config ./webpack.config.js",
-    "start": "yarn watch && webpack-dev-server --progress --inline --hot",
+    "start": "webpack-dev-server --progress --inline --hot",
     "build": "webpack --config ./webpack.config.js",
     "deploy": "gh-pages -d dist"
   },

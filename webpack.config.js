@@ -16,14 +16,11 @@ const config = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 				query: { //query configuration passed to the loader
-					presets: ['react', 'es2015', 'react-hmre']
+					presets: ['react', 'es2015']
 				}
 			}
 		]
 	},
-  plugins: [
-    new webpack.HotModuleReplacementPlugin() //generate hot update chunks
-  ],
   devServer: {
     hot: true,
     contentBase: './dist'

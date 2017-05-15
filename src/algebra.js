@@ -12,18 +12,6 @@ let x = getRandomInt(-10, 10);
 console.log(x);
 
 // Components
-
-// Box - 'dumb' component, only renders out box
-class Box extends Component {
-  render() {
-    return (
-      <div className="box">
-        <p>1</p>
-      </div>
-    )
-  }
-}
-
 // Main component
 class Algebra extends Component {
   init() {
@@ -31,8 +19,21 @@ class Algebra extends Component {
   }
 
   render() {
-    <div className="Algebra">
-      <Box />
-    </div>
+    return (
+      <div className="Algebra">
+        <Box />
+      </div>
+    );
   }
 }
+
+// Box - 'dumb' component, only renders out box
+const Box = () => {
+  return (
+      <div className="box">
+        <p>1</p>
+      </div>
+  );
+}
+
+export default Algebra;

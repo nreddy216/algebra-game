@@ -14,6 +14,9 @@ class Algebra extends Component {
   constructor(props) {
     super(props);
     console.log('init');
+    this.props = {
+      numBoxes: 5
+    }
     this.state = {
       angle: 180
     }
@@ -22,26 +25,20 @@ class Algebra extends Component {
   render() {
     return (
       <div className="Algebra">
-        <Box />
-        <MysteryBox />
-        <Balance />
+        <Box {...this.props} />
+        <MysteryBox {...this.props} />
+        <Balance {...this.props} />
       </div>
     );
   }
 }
 
 // Mystery Box
-class MysteryBox extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return (
-      <div className="MysteryBox" value={getRandomInt(-10, 10)}>
-      </div>
-    );
-  }
+const MysteryBox = () => {
+  return (
+    <div className="MysteryBox" value={getRandomInt(-10, 10)}>
+    </div>
+  );
 };
 
 // Box - 'dumb' component, only renders out box
@@ -55,7 +52,7 @@ class Box extends Component {
 
   render(){
     let componentArray = [];
-    for(var i=0; i<=5; i++) {
+    for(var i=0; i<=this.props.numBoxes; i++) {
       componentArray.push(<div className="Box" key={i} value='1'></div>);
     }
     return (

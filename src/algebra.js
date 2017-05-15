@@ -15,30 +15,39 @@ class Algebra extends Component {
     super();
 
     const xValue = getRandomInt(-5, 5);
-    const rightValue = xValue + getRandomInt(-5, 5);
+    const leftValue = xValue + getRandomInt(-5, 5);
     this.state = {
       angle: 180,
       xValue: xValue,
-      numBoxesRight: xValue + rightValue,
-      numBoxesLeft: rightValue - xValue
+      numBoxesRight: xValue + leftValue,
+      numBoxesLeft: leftValue
     }
   }
 
   addBox(){
-    // this.setState({
-    //   numBoxes: this.state.numBoxes + 1
-    // })
+    this.setState({
+      numBoxesLeft: this.state.numBoxesLeft + 1
+    })
+  }
+
+  subtractBoxFromBothSides(){
+    this.setState({
+      numBoxesLeft: this.state.numBoxesLeft - 1,
+      numBoxesRight: this.state.numBoxesRight - 1
+    })
+
+    console.log(this.state);
   }
 
   render() {
     return (
       <div className="Algebra">
         <div className="Boxes">
-          <BoxContainer numBoxes={Math.abs(this.state.numBoxesLeft)} />
-          <BoxContainer numBoxes={Math.abs(this.state.numBoxesRight)} />
+          <BoxContainer numBoxes={this.state.numBoxesLeft} />
+          <BoxContainer numBoxes={this.state.numBoxesRight} />
         </div>
-        <MysteryBox addBox={this.addBox.bind(this)} xValue={this.state.xValue} />
-        <Balance />
+        <MysteryBox subtractBoxFromBothSides={this.subtractBoxFromBothSides.bind(this)} xValue={this.state.xValue} />
+        <Balance angle={this.state.angle} />
       </div>
     );
   }
@@ -49,7 +58,7 @@ class MysteryBox extends Component {
 
   render() {
     return (
-      <div className="MysteryBox" onClick={this.props.addBox} value={this.props.xValue}>
+      <div className="MysteryBox" onClick={this.props.subtractBoxFromBothSides} value={this.props.xValue}>
       </div>
     );
   }
@@ -63,8 +72,8 @@ class BoxContainer extends Component {
   render() {
     let componentArray = [];
 
-    for(var i=0; i<this.props.numBoxes; i++){
-      componentArray.push( <Box key={i} />);
+    for(var i=0; i<Math.abs(this.props.numBoxes); i++){
+      componentArray.push( <Box key={i} numBoxes={this.props.numBoxes} />);
     }
 
     return (
@@ -84,8 +93,16 @@ class Box extends Component {
   }
 
   render(){
+    let boxStyle = {};
+    if(this.props.numBoxes < 0){
+      console.log("less than");
+      boxStyle = {
+        backgroundColor: '#d3d3d3'
+      }
+    }
+
     return (
-      <div className="Box" value="1">
+      <div className="Box" value="1" style={boxStyle}>
       </div>
     );
   }
@@ -100,24 +117,14 @@ class Balance extends Component {
 
   render(){
     return (
-      <div className="Balance" value='180'>
+      <div className="Balance">
+        <div className="seesaw" style={{transform: 'rotate(' + this.props.angle + 'deg)'}}>
+        </div>
         <div className="pivot">
         </div>
       </div>
     );
   }
 };
-
-// class LeftSide extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//   render(){
-//     return (
-//
-//     )
-//   }
-// }
 
 export default Algebra;

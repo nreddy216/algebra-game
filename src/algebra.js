@@ -14,20 +14,21 @@ class Algebra extends Component {
   constructor(props) {
     super(props);
     console.log('init');
-    this.props = {
-      numBoxes: 5
-    }
+    // this.props = {
+    //   numBoxes: 5
+    // }
     this.state = {
-      angle: 180
+      angle: 180,
+      numBoxes: 5
     }
   }
 
   render() {
     return (
       <div className="Algebra">
-        <Box {...this.props} />
+        <Box state={this.state} {...this.props} />
         <MysteryBox {...this.props} />
-        <Balance {...this.props} />
+        <Balance state={this.state} {...this.props} />
       </div>
     );
   }

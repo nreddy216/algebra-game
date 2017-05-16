@@ -138,10 +138,14 @@ const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
   return (
     <div className="BalanceContainer" style={{transform: 'rotate(' + angle + 'deg)'}}>
       <div className="Boxes">
-        <BoxContainer numBoxes={numBoxesLeft} />
-        <BoxContainer numBoxes={numBoxesRight} />
+        <div className="LeftBoxes">
+          <MysteryBox xValue={xValue} />
+          <BoxContainer numBoxes={numBoxesLeft} />
+        </div>
+        <div className="RightBoxes">
+          <BoxContainer numBoxes={numBoxesRight} />
+        </div>
       </div>
-      <MysteryBox xValue={xValue} />
       <Balance />
     </div>
   );

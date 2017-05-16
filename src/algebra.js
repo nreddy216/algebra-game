@@ -64,7 +64,7 @@ class Algebra extends Component {
         <BalanceContainer angle={this.state.angle} numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} xValue={this.state.xValue} />
         <div className="pivot">
         </div>
-        <Statement numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} />
+        <Statement numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} angle={this.state.angle} />
       </div>
     );
   }
@@ -120,7 +120,6 @@ class Box extends Component {
   render(){
     let boxStyle = {};
     if(this.props.numBoxes < 0){
-      console.log("less than");
       boxStyle = {
         backgroundColor: '#d3d3d3'
       }
@@ -172,20 +171,30 @@ class Statement extends Component {
     super(props);
   }
 
-  getLeftStatement(numBoxesLeft){
+  getStatement(numBoxesLeft, numBoxesRight, angle) {
+    let statement = '';
+
     if(numBoxesLeft < 0){
-      return "x - " + Math.abs(numBoxesLeft)
-    } else if (numBoxesLeft === 0){
-      return "x "
+      statement = `x - ${Math.abs(numBoxesLeft)}`
+    } else if (numBoxesLeft === 0) {
+      statement = 'x'
     } else {
-      return "x + " + numBoxesLeft
+      statement = `x + ${numBoxesLeft}`
     }
+
+    if(angle === 0){
+      statement += ' = ';
+    } else {
+      statement += ' != ';
+    }
+
+    return `${statement} ${numBoxesRight}`
   }
 
   render(){
     return (
       <div className="Statement">
-        {this.getLeftStatement(this.props.numBoxesLeft)} = {this.props.numBoxesRight}
+        {this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)}
       </div>
     );
   }

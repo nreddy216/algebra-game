@@ -6,13 +6,16 @@ function getRandomInt(min, max) {
 }
 
 // Components
-// Main component
+
+// App-level component
 class Algebra extends Component {
   constructor() {
     super();
 
     const xValue = getRandomInt(-5, 5);
     const leftValue = getRandomInt(-5, 5);
+
+    // Initial state
     this.state = {
       angle: 0,
       xValue: xValue,
@@ -137,6 +140,12 @@ const Button = ({ name, onClick }) => {
   );
 };
 
+const MysteryBox = ({ xValue }) => {
+  return (
+    <div className="MysteryBox" value={xValue}>
+    </div>
+  );
+}
 
 // Adds boxes to the container
 const BoxContainer = ({ numBoxes }) => {
@@ -155,7 +164,6 @@ const BoxContainer = ({ numBoxes }) => {
 
 // Box
 class Box extends Component {
-
   constructor(props){
     super(props);
   }
@@ -169,17 +177,10 @@ class Box extends Component {
     }
 
     return (
-      <div className="Box" value="1" style={boxStyle} onClick={this.props.subtractBoxFromBothSides}>
+      <div className="Box" value="1" style={boxStyle}>
       </div>
     );
   }
-}
-
-const MysteryBox = ({ xValue }) => {
-  return (
-    <div className="MysteryBox" value={xValue}>
-    </div>
-  );
 }
 
 export default Algebra;

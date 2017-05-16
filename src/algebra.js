@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-// Helps conditionally join class names together
-import classNames from 'classnames';
 
 // Helper functions
-// TODO: Move this to helper file or X component
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -74,68 +71,6 @@ class Algebra extends Component {
   }
 }
 
-// Mystery Box
-class MysteryBox extends Component {
-
-  render() {
-    return (
-      <div className="MysteryBox" onClick={this.props.subtractBoxFromLeft} value={this.props.xValue}>
-      </div>
-    );
-  }
-};
-
-const Button = ({ name, onClick }) => {
-  return (
-    <div className="Button" onClick={onClick}>
-      {name}
-    </div>
-  );
-};
-
-class BoxContainer extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  render() {
-    let componentArray = [];
-
-    for(var i=0; i<Math.abs(this.props.numBoxes); i++){
-      componentArray.push( <Box key={i} numBoxes={this.props.numBoxes} />);
-    }
-
-    return (
-      <div className="BoxContainer">
-        {componentArray}
-      </div>
-    )
-  }
-
-}
-
-// Box
-class Box extends Component {
-
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    let boxStyle = {};
-    if(this.props.numBoxes < 0){
-      boxStyle = {
-        backgroundColor: '#d3d3d3'
-      }
-    }
-
-    return (
-      <div className="Box" value="1" style={boxStyle} onClick={this.props.subtractBoxFromBothSides}>
-      </div>
-    );
-  }
-}
-
 // Balance
 // state : rotation of balance shifts depending on # boxes on each side of balance
 const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
@@ -150,30 +85,15 @@ const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
           <BoxContainer numBoxes={numBoxesRight} />
         </div>
       </div>
-      <Balance />
-    </div>
-  );
-};
-
-// Balance
-// state : rotation of balance shifts depending on # boxes on each side of balance
-class Balance extends Component {
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    return (
       <div className="Balance">
         <div className="seesaw">
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
-// Balance
-// state : rotation of balance shifts depending on # boxes on each side of balance
+// Renders algebraic equation describing the balance
 class Statement extends Component {
   constructor(props){
     super(props);
@@ -208,5 +128,58 @@ class Statement extends Component {
   }
 };
 
+// Button with some label and on click function
+const Button = ({ name, onClick }) => {
+  return (
+    <div className="Button" onClick={onClick}>
+      {name}
+    </div>
+  );
+};
+
+
+// Adds boxes to the container
+const BoxContainer = ({ numBoxes }) => {
+  let componentArray = [];
+
+  for(var i=0; i<Math.abs(numBoxes); i++){
+    componentArray.push( <Box key={i} numBoxes={numBoxes} />);
+  }
+
+  return (
+    <div className="BoxContainer">
+      {componentArray}
+    </div>
+  )
+}
+
+// Box
+class Box extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    let boxStyle = {};
+    if(this.props.numBoxes < 0){
+      boxStyle = {
+        backgroundColor: '#d3d3d3'
+      }
+    }
+
+    return (
+      <div className="Box" value="1" style={boxStyle} onClick={this.props.subtractBoxFromBothSides}>
+      </div>
+    );
+  }
+}
+
+const MysteryBox = ({ xValue }) => {
+  return (
+    <div className="MysteryBox" value={xValue}>
+    </div>
+  );
+}
 
 export default Algebra;

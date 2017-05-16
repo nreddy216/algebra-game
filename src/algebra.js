@@ -17,68 +17,53 @@ class Algebra extends Component {
     const xValue = getRandomInt(-5, 5);
     const leftValue = getRandomInt(-5, 5);
     this.state = {
-      angle: 180,
+      angle: 0,
       xValue: xValue,
       numBoxesRight: xValue + leftValue,
       numBoxesLeft: leftValue
     }
   }
 
-  // TODO: Add buttons/UI to add / subtract these boxes on right or left
-  // Figure out how to change angle
-  // Refactor!
-
   addBoxToLeft(){
     this.setState({
-      numBoxesLeft: this.state.numBoxesLeft + 1
+      numBoxesLeft: this.state.numBoxesLeft + 1,
+      angle: this.state.angle - 3
     })
   }
 
   addBoxToRight(){
     this.setState({
-      numBoxesRight: this.state.numBoxesRight + 1
+      numBoxesRight: this.state.numBoxesRight + 1,
+      angle: this.state.angle + 3
     })
   }
 
   subtractBoxFromLeft(){
     this.setState({
-      numBoxesLeft: this.state.numBoxesLeft - 1
+      numBoxesLeft: this.state.numBoxesLeft - 1,
+      angle: this.state.angle + 3
     })
   }
 
   subtractBoxFromRight(){
     this.setState({
-      numBoxesRight: this.state.numBoxesRight - 1
+      numBoxesRight: this.state.numBoxesRight - 1,
+      angle: this.state.angle - 3
     })
-  }
-
-  // subtractBoxFromBothSides(){
-  //   // this.setState({
-  //   //   numBoxesLeft: this.state.numBoxesLeft - 1,
-  //   //   numBoxesRight: this.state.numBoxesRight - 1
-  //   // })
-  //
-  //   console.log("subtract");
-  // }
-  //
-  addBoxToBothSides(){
-    this.setState({
-      numBoxesLeft: this.state.numBoxesLeft + 1,
-      numBoxesRight: this.state.numBoxesRight + 1
-    })
-
-    console.log(this.state);
   }
 
   render() {
     return (
-      <div className="Algebra" >
-        <div className="Boxes"  >
-          <BoxContainer numBoxes={this.state.numBoxesLeft}  {...this.props} />
-          <BoxContainer numBoxes={this.state.numBoxesRight} {...this.props} />
+      <div className="Algebra">
+        <div className="Buttons">
+          <Button onClick={this.subtractBoxFromLeft.bind(this)} name="Subtract from Left"></Button>
+          <Button onClick={this.subtractBoxFromRight.bind(this)} name="Subtract from Right"></Button>
+          <Button onClick={this.addBoxToLeft.bind(this)} name="Add to Left"></Button>
+          <Button onClick={this.addBoxToRight.bind(this)} name="Add to Right"></Button>
         </div>
-        <MysteryBox addBoxToBothSides={this.addBoxToBothSides.bind(this)} xValue={this.state.xValue} />
-        <Balance angle={this.state.angle} />
+        <BalanceContainer angle={this.state.angle} numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} xValue={this.state.xValue} />
+        <div className="pivot">
+        </div>
         <Statement numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} />
       </div>
     );
@@ -90,10 +75,18 @@ class MysteryBox extends Component {
 
   render() {
     return (
-      <div className="MysteryBox" onClick={this.props.addBoxToBothSides} value={this.props.xValue}>
+      <div className="MysteryBox" onClick={this.props.subtractBoxFromLeft} value={this.props.xValue}>
       </div>
     );
   }
+};
+
+const Button = ({ name, onClick }) => {
+  return (
+    <div className="Button" onClick={onClick}>
+      {name}
+    </div>
+  );
 };
 
 class BoxContainer extends Component {
@@ -142,25 +135,30 @@ class Box extends Component {
 
 // Balance
 // state : rotation of balance shifts depending on # boxes on each side of balance
+const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
+  return (
+    <div className="BalanceContainer" style={{transform: 'rotate(' + angle + 'deg)'}}>
+      <div className="Boxes">
+        <BoxContainer numBoxes={numBoxesLeft} />
+        <BoxContainer numBoxes={numBoxesRight} />
+      </div>
+      <MysteryBox xValue={xValue} />
+      <Balance />
+    </div>
+  );
+};
+
+// Balance
+// state : rotation of balance shifts depending on # boxes on each side of balance
 class Balance extends Component {
   constructor(props){
     super(props);
   }
 
-  getDegreeOfRotation(angle){
-    return angle;
-  }
-
-  componentDidUpdate(){
-    console.log('hi');
-  }
-
   render(){
     return (
       <div className="Balance">
-        <div className="seesaw" style={{transform: 'rotate(' + this.props.angle + 'deg)'}}>
-        </div>
-        <div className="pivot">
+        <div className="seesaw">
         </div>
       </div>
     );

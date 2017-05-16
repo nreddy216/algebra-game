@@ -55,13 +55,17 @@ class Algebra extends Component {
   render() {
     return (
       <div className="Algebra">
-        <div className="Buttons">
-          <Button onClick={this.subtractBoxFromLeft.bind(this)} name="Subtract from Left"></Button>
-          <Button onClick={this.subtractBoxFromRight.bind(this)} name="Subtract from Right"></Button>
-          <Button onClick={this.addBoxToLeft.bind(this)} name="Add to Left"></Button>
-          <Button onClick={this.addBoxToRight.bind(this)} name="Add to Right"></Button>
-        </div>
         <BalanceContainer angle={this.state.angle} numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} xValue={this.state.xValue} />
+        <div className="Buttons">
+          <div className="LeftButtons">
+            <Button onClick={this.subtractBoxFromLeft.bind(this)} name=" - "></Button>
+            <Button onClick={this.addBoxToLeft.bind(this)} name=" + "></Button>
+          </div>
+          <div className="RightButtons">
+            <Button onClick={this.subtractBoxFromRight.bind(this)} name=" - "></Button>
+            <Button onClick={this.addBoxToRight.bind(this)} name=" + "></Button>
+          </div>
+        </div>
         <div className="pivot">
         </div>
         <Statement numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} angle={this.state.angle} />

@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 
 // Helper functions
+//
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // Components
-
+//
 // App-level component
 class Algebra extends Component {
   constructor() {
     super();
 
-    const xValue = getRandomInt(-5, 5);
-    const leftValue = getRandomInt(-5, 5);
+    const range = 5
+    const xValue = getRandomInt(-range, range);
+    const leftValue = getRandomInt(-range, range);
 
     // Initial state
     this.state = {

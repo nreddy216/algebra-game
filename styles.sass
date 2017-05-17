@@ -1,10 +1,35 @@
+$tablet-width: 768px
+$desktop-width: 1024px
+
+@mixin mobile
+  @media (min-width: 0) and (max-width: #{$tablet-width - 1px})
+    @content
+
+@mixin tablet
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+    @content
+
+@mixin desktop
+  @media (min-width: #{$desktop-width})
+    @content
+
 body
   margin: 0
 
+p
+  font-size: 12px
+  @include mobile
+    font-size: 20px
+  @include tablet
+    font-size: 100px
+
 #main
   background-color: #fff
-  font-size: 12px
   height: 100vh
+
+.Algebra
+  display: flex
+  justify-content: center
 
 .Statement
   text-align: center
@@ -14,6 +39,7 @@ body
   position: absolute
   justify-content: space-between
   width: 100%
+  top: 10rem
 
 .Button
   width: 5rem
@@ -31,7 +57,7 @@ body
 .BalanceContainer
   position: absolute
   left: 10%
-  top: 10rem
+  top: 40vh
   width: 80%
   height: 3rem
 
@@ -70,9 +96,9 @@ body
 .pivot
   position: absolute
   left: 47.5%
-  top: 13rem
+  top: 43vh
   width: calc(5% + 1rem)
-  height: 7rem
+  height: 30rem
   background-color: black
   // left: 46%
   // top: 55%

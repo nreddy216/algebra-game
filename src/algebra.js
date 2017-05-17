@@ -76,8 +76,10 @@ class Algebra extends Component {
   }
 }
 
+// Smaller, Dumber Components
+//
 // Balance
-// state : rotation of balance shifts depending on # boxes on each side of balance
+// state : rotation of balance shifts depending on value of boxes on each side of balance
 const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
   return (
     <div className="BalanceContainer" style={{transform: 'rotate(' + angle + 'deg)'}}>
@@ -99,6 +101,7 @@ const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
 };
 
 // Renders algebraic equation describing the balance
+//
 class Statement extends Component {
   constructor(props){
     super(props);
@@ -127,13 +130,15 @@ class Statement extends Component {
   render(){
     return (
       <div className="Statement">
-        {this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)}
+        <p>{this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)}</p>
       </div>
     );
   }
 };
 
+// TODO: Is this needed? Does it already exist in base API?
 // Button with some label and on click function
+//
 const Button = ({ name, onClick }) => {
   return (
     <div className="Button" onClick={onClick}>
@@ -142,6 +147,8 @@ const Button = ({ name, onClick }) => {
   );
 };
 
+// The Mystery Box - has unknown value to user
+//
 const MysteryBox = ({ xValue }) => {
   return (
     <div className="MysteryBox" value={xValue}>
@@ -150,9 +157,9 @@ const MysteryBox = ({ xValue }) => {
 }
 
 // Adds boxes to the container
+//
 const BoxContainer = ({ numBoxes }) => {
   let componentArray = [];
-
   for(var i=0; i<Math.abs(numBoxes); i++){
     componentArray.push( <Box key={i} numBoxes={numBoxes} />);
   }
@@ -164,13 +171,15 @@ const BoxContainer = ({ numBoxes }) => {
   )
 }
 
-// Box
+// Basic box component, each has a value of 1 or -1 in terms of 'weight'
+//
 class Box extends Component {
   constructor(props){
     super(props);
   }
 
   render(){
+    // If the box is negative, style it differently
     let boxStyle = {};
     if(this.props.numBoxes < 0){
       boxStyle = {
@@ -179,7 +188,7 @@ class Box extends Component {
     }
 
     return (
-      <div className="Box" value="1" style={boxStyle}>
+      <div className="Box" style={boxStyle}>
       </div>
     );
   }

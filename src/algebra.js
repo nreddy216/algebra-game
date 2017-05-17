@@ -194,4 +194,19 @@ class Box extends Component {
   }
 }
 
+// TEST - Draggable box to add / subtract from right or left
+//
+class DragBox extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return (
+      <div className="DragBox" style={boxStyle} draggable="true">
+      </div>
+    );
+  }
+}
+
 export default Algebra;

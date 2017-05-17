@@ -8,7 +8,7 @@
     "watch": "webpack --progress --colors --watch --config ./webpack.config.js",
     "start": "webpack-dev-server --progress --inline --hot",
     "build": "webpack --config ./webpack.config.js",
-    "deploy": "gh-pages -d dist"
+    "deploy": "git push origin `git subtree split --prefix subfolder-name-here master`:gh-pages --force"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

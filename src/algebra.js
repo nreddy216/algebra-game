@@ -141,17 +141,6 @@ class Statement extends Component {
   }
 };
 
-// TODO: Is this needed? Does it already exist in base API?
-// Button with some label and on click function
-//
-// const Button = ({ name, onClick }) => {
-//   return (
-//     <div className="Button" onClick={onClick}>
-//       {name}
-//     </div>
-//   );
-// };
-
 // The Mystery Box - has unknown value to user
 //
 const MysteryBox = ({ xValue }) => {

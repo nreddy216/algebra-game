@@ -17,15 +17,20 @@ class Algebra extends Component {
     const xValue = getRandomInt(-range, range);
     const leftValue = getRandomInt(-range, range);
 
+    // Top level props
+    let props = {
+      xValue: xValue
+    }
+
     // Initial state
     this.state = {
       angle: 0,
-      xValue: xValue,
       numBoxesRight: xValue + leftValue,
       numBoxesLeft: leftValue
     }
   }
 
+  // Algebraic Functions
   addBoxToLeft(){
     this.setState({
       numBoxesLeft: this.state.numBoxesLeft + 1,
@@ -57,20 +62,20 @@ class Algebra extends Component {
   render() {
     return (
       <div className="Algebra">
-        <BalanceContainer angle={this.state.angle} numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} xValue={this.state.xValue} />
-        <div className="Buttons">
+        <BalanceContainer {...this.props} {...this.state} />
+        <div className="BalanceButtons">
           <div className="LeftButtons">
-            <Button onClick={this.subtractBoxFromLeft.bind(this)} name=" - "></Button>
-            <Button onClick={this.addBoxToLeft.bind(this)} name=" + "></Button>
+            <button onClick={this.subtractBoxFromLeft.bind(this)}> - </button>
+            <button onClick={this.addBoxToLeft.bind(this)}> + </button>
           </div>
           <div className="RightButtons">
-            <Button onClick={this.subtractBoxFromRight.bind(this)} name=" - "></Button>
-            <Button onClick={this.addBoxToRight.bind(this)} name=" + "></Button>
+            <button onClick={this.subtractBoxFromRight.bind(this)}> - </button>
+            <button onClick={this.addBoxToRight.bind(this)}> + </button>
           </div>
         </div>
         <div className="pivot">
         </div>
-        <Statement numBoxesLeft={this.state.numBoxesLeft} numBoxesRight={this.state.numBoxesRight} angle={this.state.angle} />
+        <Statement {...this.state} />
       </div>
     );
   }
@@ -139,13 +144,13 @@ class Statement extends Component {
 // TODO: Is this needed? Does it already exist in base API?
 // Button with some label and on click function
 //
-const Button = ({ name, onClick }) => {
-  return (
-    <div className="Button" onClick={onClick}>
-      {name}
-    </div>
-  );
-};
+// const Button = ({ name, onClick }) => {
+//   return (
+//     <div className="Button" onClick={onClick}>
+//       {name}
+//     </div>
+//   );
+// };
 
 // The Mystery Box - has unknown value to user
 //

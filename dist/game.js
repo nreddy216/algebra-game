@@ -404,7 +404,7 @@ module.exports = warning;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -787,7 +787,7 @@ module.exports = ExecutionEnvironment;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -1127,7 +1127,7 @@ module.exports = ReactComponentTreeHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -1159,7 +1159,7 @@ module.exports = { debugTool: debugTool };
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 function makeEmptyFunction(arg) {
@@ -1458,7 +1458,7 @@ module.exports = ReactUpdates;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -1984,7 +1984,7 @@ module.exports = DOMProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -2449,7 +2449,7 @@ module.exports = ReactElement;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -3467,7 +3467,7 @@ module.exports = SyntheticUIEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -4138,7 +4138,7 @@ module.exports = SyntheticMouseEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -4600,7 +4600,7 @@ module.exports = setInnerHTML;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -4633,7 +4633,7 @@ module.exports = canDefineProperty;
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @typechecks
- *
+ * 
  */
 
 /*eslint-disable no-self-compare */
@@ -5193,7 +5193,7 @@ module.exports = EventPluginUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -5401,7 +5401,7 @@ module.exports = LinkedValueUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -5453,7 +5453,7 @@ module.exports = ReactComponentEnvironment;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -7056,7 +7056,7 @@ module.exports = CSSProperty;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -7688,7 +7688,7 @@ module.exports = ReactEmptyComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -8462,7 +8462,7 @@ module.exports = ReactMount;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -8508,7 +8508,7 @@ module.exports = ReactNodeTypes;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -8562,7 +8562,7 @@ module.exports = ViewportMetrics;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -8626,7 +8626,7 @@ module.exports = accumulateInto;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -8870,7 +8870,7 @@ module.exports = instantiateReactComponent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -9165,7 +9165,7 @@ module.exports = traverseAllChildren;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -9449,7 +9449,7 @@ module.exports = ReactElementValidator;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -9480,7 +9480,7 @@ module.exports = ReactPropTypeLocationNames;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -9524,6 +9524,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(50);
@@ -9539,12 +9541,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // Helper functions
+//
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
 // Components
-// Main component
+//
+// App-level component
 
 var Algebra = function (_Component) {
   _inherits(Algebra, _Component);
@@ -9554,16 +9558,26 @@ var Algebra = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Algebra.__proto__ || Object.getPrototypeOf(Algebra)).call(this));
 
-    var xValue = getRandomInt(-5, 5);
-    var leftValue = getRandomInt(-5, 5);
+    var range = 5;
+    var xValue = getRandomInt(-range, range);
+    var leftValue = getRandomInt(-range, range);
+
+    // Top level props
+    var props = {
+      xValue: xValue
+    };
+
+    // Initial state
     _this.state = {
       angle: 0,
-      xValue: xValue,
       numBoxesRight: xValue + leftValue,
       numBoxesLeft: leftValue
     };
     return _this;
   }
+
+  // Algebraic Functions
+
 
   _createClass(Algebra, [{
     key: "addBoxToLeft",
@@ -9603,25 +9617,41 @@ var Algebra = function (_Component) {
       return _react2.default.createElement(
         "div",
         { className: "Algebra" },
-        _react2.default.createElement(BalanceContainer, { angle: this.state.angle, numBoxesLeft: this.state.numBoxesLeft, numBoxesRight: this.state.numBoxesRight, xValue: this.state.xValue }),
+        _react2.default.createElement(BalanceContainer, _extends({}, this.props, this.state)),
         _react2.default.createElement(
           "div",
-          { className: "Buttons" },
+          { className: "BalanceButtons" },
           _react2.default.createElement(
             "div",
             { className: "LeftButtons" },
-            _react2.default.createElement(Button, { onClick: this.subtractBoxFromLeft.bind(this), name: " - " }),
-            _react2.default.createElement(Button, { onClick: this.addBoxToLeft.bind(this), name: " + " })
+            _react2.default.createElement(
+              "button",
+              { onClick: this.subtractBoxFromLeft.bind(this) },
+              " - "
+            ),
+            _react2.default.createElement(
+              "button",
+              { onClick: this.addBoxToLeft.bind(this) },
+              " + "
+            )
           ),
           _react2.default.createElement(
             "div",
             { className: "RightButtons" },
-            _react2.default.createElement(Button, { onClick: this.subtractBoxFromRight.bind(this), name: " - " }),
-            _react2.default.createElement(Button, { onClick: this.addBoxToRight.bind(this), name: " + " })
+            _react2.default.createElement(
+              "button",
+              { onClick: this.subtractBoxFromRight.bind(this) },
+              " - "
+            ),
+            _react2.default.createElement(
+              "button",
+              { onClick: this.addBoxToRight.bind(this) },
+              " + "
+            )
           )
         ),
         _react2.default.createElement("div", { className: "pivot" }),
-        _react2.default.createElement(Statement, { numBoxesLeft: this.state.numBoxesLeft, numBoxesRight: this.state.numBoxesRight, angle: this.state.angle })
+        _react2.default.createElement(Statement, this.state)
       );
     }
   }]);
@@ -9629,8 +9659,10 @@ var Algebra = function (_Component) {
   return Algebra;
 }(_react.Component);
 
+// Smaller, Dumber Components
+//
 // Balance
-// state : rotation of balance shifts depending on # boxes on each side of balance
+// state : rotation of balance shifts depending on value of boxes on each side of balance
 
 
 var BalanceContainer = function BalanceContainer(_ref) {
@@ -9666,6 +9698,7 @@ var BalanceContainer = function BalanceContainer(_ref) {
 };
 
 // Renders algebraic equation describing the balance
+//
 
 var Statement = function (_Component2) {
   _inherits(Statement, _Component2);
@@ -9703,7 +9736,11 @@ var Statement = function (_Component2) {
       return _react2.default.createElement(
         "div",
         { className: "Statement" },
-        this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)
+        _react2.default.createElement(
+          "p",
+          null,
+          this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)
+        )
       );
     }
   }]);
@@ -9713,30 +9750,31 @@ var Statement = function (_Component2) {
 
 ;
 
+// TODO: Is this needed? Does it already exist in base API?
 // Button with some label and on click function
-var Button = function Button(_ref2) {
-  var name = _ref2.name,
-      onClick = _ref2.onClick;
+//
+// const Button = ({ name, onClick }) => {
+//   return (
+//     <div className="Button" onClick={onClick}>
+//       {name}
+//     </div>
+//   );
+// };
 
-  return _react2.default.createElement(
-    "div",
-    { className: "Button", onClick: onClick },
-    name
-  );
-};
-
-var MysteryBox = function MysteryBox(_ref3) {
-  var xValue = _ref3.xValue;
+// The Mystery Box - has unknown value to user
+//
+var MysteryBox = function MysteryBox(_ref2) {
+  var xValue = _ref2.xValue;
 
   return _react2.default.createElement("div", { className: "MysteryBox", value: xValue });
 };
 
 // Adds boxes to the container
-var BoxContainer = function BoxContainer(_ref4) {
-  var numBoxes = _ref4.numBoxes;
+//
+var BoxContainer = function BoxContainer(_ref3) {
+  var numBoxes = _ref3.numBoxes;
 
   var componentArray = [];
-
   for (var i = 0; i < Math.abs(numBoxes); i++) {
     componentArray.push(_react2.default.createElement(Box, { key: i, numBoxes: numBoxes }));
   }
@@ -9748,7 +9786,8 @@ var BoxContainer = function BoxContainer(_ref4) {
   );
 };
 
-// Box
+// Basic box component, each has a value of 1 or -1 in terms of 'weight'
+//
 
 var Box = function (_Component3) {
   _inherits(Box, _Component3);
@@ -9762,6 +9801,7 @@ var Box = function (_Component3) {
   _createClass(Box, [{
     key: "render",
     value: function render() {
+      // If the box is negative, style it differently
       var boxStyle = {};
       if (this.props.numBoxes < 0) {
         boxStyle = {
@@ -9769,11 +9809,34 @@ var Box = function (_Component3) {
         };
       }
 
-      return _react2.default.createElement("div", { className: "Box", value: "1", style: boxStyle });
+      return _react2.default.createElement("div", { className: "Box", style: boxStyle });
     }
   }]);
 
   return Box;
+}(_react.Component);
+
+// TEST - Draggable box to add / subtract from right or left
+//
+
+
+var DragBox = function (_Component4) {
+  _inherits(DragBox, _Component4);
+
+  function DragBox(props) {
+    _classCallCheck(this, DragBox);
+
+    return _possibleConstructorReturn(this, (DragBox.__proto__ || Object.getPrototypeOf(DragBox)).call(this, props));
+  }
+
+  _createClass(DragBox, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("div", { className: "DragBox", style: boxStyle, draggable: "true" });
+    }
+  }]);
+
+  return DragBox;
 }(_react.Component);
 
 exports.default = Algebra;
@@ -9853,7 +9916,7 @@ exports = module.exports = __webpack_require__(86)(undefined);
 
 
 // module
-exports.push([module.i, "#main {\n  background-color: #fff;\n  font-size: 12px;\n  height: 100vh; }\n\n.Statement {\n  text-align: center; }\n\n.Buttons {\n  display: flex;\n  position: absolute;\n  justify-content: space-between;\n  width: 100%; }\n\n.Button {\n  width: 5rem;\n  height: 2rem;\n  background-color: lightblue;\n  border: 0.1rem solid black;\n  font-size: 2rem;\n  text-align: center; }\n\n.LeftButtons, .RightButtons {\n  display: flex;\n  flex-direction: row;\n  width: 10%; }\n\n.BalanceContainer {\n  position: absolute;\n  left: 10%;\n  top: 10rem;\n  width: 80%;\n  height: 3rem; }\n\n.MysteryBox {\n  background-color: green;\n  height: 2rem;\n  width: 2rem; }\n\n.Boxes {\n  display: flex;\n  justify-content: space-between; }\n\n.LeftBoxes {\n  display: flex;\n  align-items: flex-end; }\n\n.RightBoxes {\n  display: flex;\n  align-items: flex-end; }\n\n.BoxContainer {\n  display: flex;\n  flex-direction: row; }\n\n.Box {\n  background-color: purple;\n  border: 0.1rem solid black;\n  height: 1rem;\n  width: 1rem; }\n\n.seesaw {\n  background-color: black;\n  width: 100%;\n  height: 3rem; }\n\n.pivot {\n  position: absolute;\n  left: 47.5%;\n  top: 13rem;\n  width: calc(5% + 1rem);\n  height: 7rem;\n  background-color: black; }\n", ""]);
+exports.push([module.i, "body {\n  margin: 0; }\n\n#main {\n  background-color: #fff;\n  height: 100vh; }\n\n.Algebra {\n  display: flex;\n  justify-content: center; }\n\n.Statement {\n  text-align: center; }\n\n.BalanceButtons {\n  display: flex;\n  position: absolute;\n  justify-content: space-between;\n  width: 100%;\n  top: 10rem; }\n  .BalanceButtons button {\n    width: 5rem;\n    height: 2rem;\n    background-color: lightblue;\n    border: 0.1rem solid black;\n    font-size: 2rem;\n    text-align: center; }\n\n.LeftButtons, .RightButtons {\n  display: flex;\n  flex-direction: row;\n  width: 10%; }\n\n.BalanceContainer {\n  position: absolute;\n  left: 10%;\n  top: 20rem;\n  width: 80%;\n  height: 3rem; }\n\n.MysteryBox {\n  background-color: green;\n  height: 2rem;\n  width: 2rem; }\n\n.Boxes {\n  display: flex;\n  justify-content: space-between; }\n\n.LeftBoxes {\n  display: flex;\n  align-items: flex-end; }\n\n.RightBoxes {\n  display: flex;\n  align-items: flex-end; }\n\n.BoxContainer {\n  display: flex;\n  flex-direction: row; }\n\n.Box {\n  background-color: purple;\n  border: 0.1rem solid black;\n  height: 1rem;\n  width: 1rem; }\n\n.seesaw {\n  background-color: black;\n  width: 100%;\n  height: 3rem; }\n\n.pivot {\n  position: absolute;\n  left: 47.5%;\n  top: 23rem;\n  width: 0;\n  height: 0;\n  border-left: 2rem solid transparent;\n  border-right: 2rem solid transparent;\n  border-bottom: 10rem solid black; }\n  @media (min-width: 768px) and (max-width: 1023px) {\n    .pivot {\n      top: 23rem; } }\n  @media (min-width: 0) and (max-width: 767px) {\n    .pivot {\n      top: 20rem; } }\n", ""]);
 
 // exports
 
@@ -10037,7 +10100,7 @@ module.exports = camelizeStyleName;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 var isTextNode = __webpack_require__(97);
@@ -10590,7 +10653,7 @@ module.exports = isTextNode;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  * @typechecks static-only
  */
 
@@ -16651,7 +16714,7 @@ module.exports = ReactDOMUnknownPropertyHook;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -17180,7 +17243,7 @@ module.exports = {
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -17403,7 +17466,7 @@ module.exports = ReactEventListener;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -17481,7 +17544,7 @@ module.exports = ReactInjection;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -18035,7 +18098,7 @@ module.exports = ReactMultiChild;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -18135,7 +18198,7 @@ module.exports = ReactOwner;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -18350,7 +18413,7 @@ module.exports = ReactReconcileTransaction;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -18540,7 +18603,7 @@ module.exports = ReactServerRenderingTransaction;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -19207,7 +19270,7 @@ module.exports = SelectEventPlugin;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -19935,7 +19998,7 @@ module.exports = SyntheticWheelEvent;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -20228,7 +20291,7 @@ module.exports = findDOMNode;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -20417,7 +20480,7 @@ module.exports = getEventKey;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -20700,7 +20763,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -20764,7 +20827,7 @@ module.exports = KeyEscapeUtils;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -22007,7 +22070,7 @@ module.exports = factory(isValidElement);
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -22188,7 +22251,7 @@ module.exports = checkReactTypeSpec;
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- *
+ * 
  */
 
 
@@ -22446,7 +22509,7 @@ var stylesInDom = {},
 	isOldIE = memoize(function() {
 		// Test for IE <= 9 as proposed by Browserhacks
 		// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-		// Tests for existence of standard globals is to allow style-loader
+		// Tests for existence of standard globals is to allow style-loader 
 		// to operate correctly into non-standard environments
 		// @see https://github.com/webpack-contrib/style-loader/issues/177
 		return window && document && document.all && !window.atob;
@@ -22612,13 +22675,13 @@ function addStyle(obj, options) {
 	// If a transform function was defined, run it on the css
 	if (options.transform && obj.css) {
 	    transformResult = options.transform(obj.css);
-
+	    
 	    if (transformResult) {
 	    	// If transform returns a value, use that instead of the original css.
 	    	// This allows running runtime transformations on the css.
 	    	obj.css = transformResult;
 	    } else {
-	    	// If the transform function returns a falsy value, don't add this css.
+	    	// If the transform function returns a falsy value, don't add this css. 
 	    	// This allows conditional loading of css
 	    	return function() {
 	    		// noop

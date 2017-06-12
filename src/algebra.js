@@ -74,6 +74,7 @@ class Algebra extends Component {
           </div>
         </div>
         <div className="pivot">
+          <img src="./images/pivot.svg" alt="pivot" />
         </div>
         <Statement {...this.state} />
       </div>
@@ -99,6 +100,7 @@ const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
       </div>
       <div className="Balance">
         <div className="seesaw">
+          <img src="./images/balance-top.svg" alt="balance top" />
         </div>
       </div>
     </div>

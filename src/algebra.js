@@ -39,6 +39,8 @@ class Algebra extends Component {
   }
 
   addBoxToRight(){
+    let angle = Math.abs(this.state.angle) > 9 ? Math.sign(this.state.angle)*12 : this.state.angle
+
     this.setState({
       numBoxesRight: this.state.numBoxesRight + 1,
       angle: this.state.angle + 3
@@ -82,29 +84,37 @@ class Algebra extends Component {
   }
 }
 
-// Smaller, Dumber Components
-//
 // Balance
 // state : rotation of balance shifts depending on value of boxes on each side of balance
-const BalanceContainer = ({ angle, numBoxesLeft, numBoxesRight, xValue }) => {
-  return (
-    <div className="BalanceContainer" style={{transform: 'rotate(' + angle + 'deg)'}}>
-      <div className="Boxes">
-        <div className="LeftBoxes">
-          <MysteryBox xValue={xValue} />
-          <BoxContainer numBoxes={numBoxesLeft} />
+class BalanceContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  constrainAngle(angle){
+    return Math.abs(angle) > 9 ? Math.sign(angle)*9 : angle;
+  }
+
+  render() {
+    return (
+      <div className="BalanceContainer" style={{transform: 'rotate(' + this.constrainAngle(this.props.angle) + 'deg)'}}>
+        <div className="Boxes">
+          <div className="LeftBoxes">
+            <MysteryBox xValue={this.props.xValue} />
+            <BoxContainer numBoxes={this.props.numBoxesLeft} />
+          </div>
+          <div className="RightBoxes">
+            <BoxContainer numBoxes={this.props.numBoxesRight} />
+          </div>
         </div>
-        <div className="RightBoxes">
-          <BoxContainer numBoxes={numBoxesRight} />
+        <div className="Balance">
+          <div className="seesaw">
+            <img src="./images/balance-top.svg" alt="balance top" />
+          </div>
         </div>
       </div>
-      <div className="Balance">
-        <div className="seesaw">
-          <img src="./images/balance-top.svg" alt="balance top" />
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 };
 
 // Renders algebraic equation describing the balance
@@ -143,6 +153,8 @@ class Statement extends Component {
   }
 };
 
+// Smaller, Dumber Components
+//
 // The Mystery Box - has unknown value to user
 //
 const MysteryBox = ({ xValue }) => {

@@ -1,19 +1,28 @@
+// ----- Variables --------- //
+
+$desktop-pivot-top: 32rem
+$tablet-pivot-top: 22rem
+$mobile-pivot-top: 20rem
+
 
 // ----- Media query mixins--------- //
-$tablet-width: 768px
-$desktop-width: 1024px
 
-@mixin mobile
-  @media (min-width: 0) and (max-width: #{$tablet-width - 1})
-    @content
+// Breakpoints
+$mob:    (mob,     320px)
+$mob-m:  (mob-m,   375px)
+$mob-l:  (mob-l,   425px)
+$tab:    (tab,     768px)
+$lap:    (lap,    1024px)
+$desk:   (desk,   1440px)
+$hi-res: (hi-res, 2560px)
+$breakpoints: ($mob, $mob-m, $mob-l, $tab, $lap, $desk, $hi-res)
 
-@mixin tablet
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width})
-    @content
-
-@mixin desktop
-  @media (min-width: #{$desktop-width + 1})
-    @content
+// Mixin
+=breakpoint($prefix)
+  @each $bp in $breakpoints
+    @if $prefix == nth($bp, 1)
+      @media all and (min-width: nth($bp, 2) + 1)
+        @content
 
 // ----- Styling --------- //
 
@@ -62,8 +71,12 @@ button:focus
 .BalanceContainer
   position: absolute
   width: 80%
-  top: 40%
+  top: calc(#{$mobile-pivot-top} - 6rem)
   left: 10%
+  +breakpoint(tab)
+    top: calc(#{$tablet-pivot-top} - 6rem)
+  +breakpoint(lap)
+    top: calc(#{$desktop-pivot-top} - 8rem)
   img
     width: 100%
   .seesaw
@@ -99,12 +112,12 @@ button:focus
 
 .pivot
   position: absolute
-  top: 56%
+  top: $mobile-pivot-top
   width: 50%
   z-index: -1
   img
     width: 100%
-  @include mobile
-    top: 50%
-  @include tablet
-    top: 55%
+  +breakpoint(tab)
+    top: $tablet-pivot-top
+  +breakpoint(lap)
+    top: $desktop-pivot-top

@@ -10,23 +10,25 @@ function getRandomInt(min, max) {
 //
 // App-level component
 class Algebra extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     const range = 5
     const xValue = getRandomInt(-range, range);
     const leftValue = getRandomInt(-range, range);
 
     // Top level props
-    let props = {
-      xValue: xValue
-    }
+    this.props = {
+      xValue: xValue,
+      originalNumBoxesLeft: leftValue
+    };
 
     // Initial state
     this.state = {
       angle: 0,
       numBoxesRight: xValue + leftValue,
-      numBoxesLeft: leftValue
+      numBoxesLeft: leftValue,
+      totalClicks: 0
     }
   }
 
@@ -34,7 +36,8 @@ class Algebra extends Component {
   addBoxToLeft(){
     this.setState({
       numBoxesLeft: this.state.numBoxesLeft + 1,
-      angle: this.state.angle - 3
+      angle: this.state.angle - 3,
+      totalClicks: this.state.totalClicks + 1
     })
   }
 
@@ -43,25 +46,29 @@ class Algebra extends Component {
 
     this.setState({
       numBoxesRight: this.state.numBoxesRight + 1,
-      angle: this.state.angle + 3
+      angle: this.state.angle + 3,
+      totalClicks: this.state.totalClicks + 1
     })
   }
 
   subtractBoxFromLeft(){
     this.setState({
       numBoxesLeft: this.state.numBoxesLeft - 1,
-      angle: this.state.angle + 3
+      angle: this.state.angle + 3,
+      totalClicks: this.state.totalClicks + 1
     })
   }
 
   subtractBoxFromRight(){
     this.setState({
       numBoxesRight: this.state.numBoxesRight - 1,
-      angle: this.state.angle - 3
+      angle: this.state.angle - 3,
+      totalClicks: this.state.totalClicks + 1
     })
   }
 
   render() {
+    console.log("ORIGINAL ", this.props.originalNumBoxesLeft);
     return (
       <div className="Algebra">
         <BalanceContainer {...this.props} {...this.state} />
@@ -78,7 +85,7 @@ class Algebra extends Component {
         <div className="pivot">
           <img src="./images/pivot.svg" alt="pivot" />
         </div>
-        <Statement {...this.state} />
+        <Statement {...this.state} {...this.props} originalNumBoxesLeft={this.props.originalNumBoxesLeft} />
       </div>
     );
   }
@@ -148,6 +155,51 @@ class Statement extends Component {
     return (
       <div className="Statement">
         <p>{this.getStatement(this.props.numBoxesLeft, this.props.numBoxesRight, this.props.angle)}</p>
+        <ClickCounter totalClicks={this.props.totalClicks} originalNumBoxesLeft={this.props.originalNumBoxesLeft} />
+      </div>
+    );
+  }
+};
+
+// Show whether they found X in the least number of moves
+//
+class ClickCounter extends Component {
+  constructor(props){
+    super(props);
+
+    this.isLeastNumberClicks = this.isLeastNumberClicks.bind(this);
+  }
+
+  isLeastNumberClicks(totalClicks, originalNumBoxesLeft){
+    let leastClicks = Math.abs(originalNumBoxesLeft * 2);
+    if (totalClicks > leastClicks) {
+      return `The optimal number of clicks to get the value of the Mystery Box was ${leastClicks}`;
+    }
+    else if (totalClicks === leastClicks) {
+      return `You did it! The least number of clicks to get the value of the Mystery Box was ${leastClicks}`;
+    } else {
+      return '';
+    }
+  }
+
+  componentDidUpdate() {
+    // this.isLeastNumberClicks(this.props.totalClicks, this.props.originalNumBoxesLeft);
+    console.log("HELLO ", this.props.totalClicks);
+    console.log("original num ", this.props.originalNumBoxesLeft);
+    // return (
+    //   <div className="ClickCounter">
+    //     <p>{this.isLeastNumberClicks(this.props.totalClicks, this.props.originalNumBoxesLeft)}</p>
+    //   </div>
+    // );
+    this.render();
+  }
+
+  render(){
+    console.log("ORIG ", this.props.originalNumBoxesLeft);
+
+    return (
+      <div className="ClickCounter">
+        <p>{this.isLeastNumberClicks(this.props.totalClicks, this.props.originalNumBoxesLeft)}</p>
       </div>
     );
   }
